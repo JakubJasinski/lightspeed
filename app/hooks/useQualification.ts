@@ -1,12 +1,11 @@
 import useSWR from "swr";
-
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
+import fetcher from "../fetcher";
 
 const useQulifications = (year) => {
-  const { data, error } = useSWR(
-    `https://ergast.com/api/f1/${year}/qualifying`,
-    fetcher
-  );
+  //http://ergast.com/api/f1/2008/5/qualifying
+  const fetchUrl = `https://ergast.com/api/f1/${year}/5/qualifying.html`;
+
+  const { data, error } = useSWR(fetchUrl, fetcher);
   return {
     qualification: data,
     isLoading: !error && !data,
