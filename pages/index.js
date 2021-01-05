@@ -1,6 +1,9 @@
 import Head from "next/head";
+import TestFunction from './TestFetch';
 
 export default function Home() {
+  
+
   return (
     <div>
       <Head>
@@ -9,6 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
+      <TestFunction></TestFunction>
         <h1>LightSpeed</h1>
       </main>
     </div>
