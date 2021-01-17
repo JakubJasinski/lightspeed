@@ -6,6 +6,7 @@ const useQulifications = (year) => {
   const fetchUrl = `https://ergast.com/api/f1/${year}/5/qualifying.json`;
 
   const { data, error } = useSWR(fetchUrl, fetcher);
+  
   return {
     qualification: data,
     isLoading: !error && !data,
